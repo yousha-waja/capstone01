@@ -6,8 +6,8 @@ body{
     background: linear-gradient(360deg, rgb(28, 23, 77)15%,rgb(119, 216, 245)90%,rgb(83, 133, 240));
 }
 .heading{
-    background-color: rgb(202, 239, 253);
-    color: rgb(0, 0, 0);
+    background:linear-gradient(360deg, rgb(119, 216, 245)15%,rgb(28, 23, 77)90%,rgb(83, 133, 240));
+    color: rgb(255, 255, 255);
     text-align: center;
     padding: .25em;
     margin:2em;
