@@ -1,0 +1,62 @@
+html{
+    height: 100%;
+}
+body{
+    color: white;
+    background: linear-gradient(360deg, rgb(28, 23, 77)15%,rgb(119, 216, 245)90%,rgb(83, 133, 240));
+}
+.heading{
+    background-color: rgb(202, 239, 253);
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: .25em;
+    margin:2em;
+    border-radius: .2em;
+}
+.myCanvas{
+    text-align: center;
+}
+canvas{
+    width:"200px";
+    height:"150px";
+    border:1px solid #ffffff;
+    text-align: center;
+    display: block;
+    margin: auto;
+}
+.section{
+    display: flex;
+    text-align: center;
+    padding:auto;
+    margin:auto
+}
+.form{
+    flex: 1;
+    line-height: 3em;
+}
+.canvas{
+    flex: 1;
+}
+.form,label{
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+}
+.form,input{
+    float: right;
+    height: 2em;
+    border-radius: .5em;
+}
+.button{
+    background-color: rgb(8, 59, 52);
+    border: none;
+    margin-top: 1em;
+    float: none;
+    color: white;
+    font-size: 16px;
+}
+.button:hover{
+    background-color: rgb(253, 253, 253);
+    font-weight: bold;
+    color: rgb(8, 59, 52);
+}
