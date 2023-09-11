@@ -33,18 +33,26 @@ canvas{
 .form{
     flex: 1;
     line-height: 3em;
+    text-align: center;
+    float: none;
 }
 .canvas{
     flex: 1;
+    margin-top: 1.5em;
+    float: none;
 }
 .form,label{
-    text-align: center;
     font-weight: bold;
     font-size: 18px;
+    margin: 0 1em;
+    flex: 1;
+    text-align: left;
 }
 .form,input{
-    float: right;
     height: 2em;
+    margin: 0 1em;
+    flex: 1;
+    text-align: left;
     border-radius: .5em;
 }
 .button{
@@ -59,4 +67,17 @@ canvas{
     background-color: rgb(253, 253, 253);
     font-weight: bold;
     color: rgb(8, 59, 52);
+}
+.form div{
+    display: flex;
+    margin-left: 10em;
+}
+.form div span{
+    margin: 0 1em;
+    flex: 1;
+    text-align: left;
+}
+img{
+    width:250px;
+    border:1px solid  #ffffff;
 }
