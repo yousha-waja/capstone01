@@ -5,7 +5,7 @@ body{
     color: white;
     background: linear-gradient(360deg, rgb(28, 23, 77)15%,rgb(119, 216, 245)90%,rgb(83, 133, 240));
 }
-.heading{
+.box{
     background:linear-gradient(360deg, rgb(119, 216, 245)15%,rgb(28, 23, 77)90%,rgb(83, 133, 240));
     color: rgb(255, 255, 255);
     text-align: center;
@@ -56,17 +56,20 @@ canvas{
     border-radius: .5em;
 }
 .button{
-    background-color: rgb(8, 59, 52);
-    border: none;
     margin-top: 1em;
+    border: .7px solid rgb(0, 32, 92);
     float: none;
-    color: white;
-    font-size: 16px;
+    letter-spacing: .08em;
+    padding:.5em;
+    color: rgb(255, 255, 255);
+    font-weight:600;
+    font-size: 18px;
 }
 .button:hover{
-    background-color: rgb(253, 253, 253);
+    background-color: rgb(255, 255, 255);
+    border: .7px solid rgb(255, 255, 255);
     font-weight: bold;
-    color: rgb(8, 59, 52);
+    color: rgb(0, 32, 92);
 }
 .form div{
     display: flex;
@@ -80,4 +83,20 @@ canvas{
 img{
     width:250px;
     border:1px solid  #ffffff;
+}
+ul {
+    line-height: 2em;
+    list-style-type: none;
+    text-align: center;
+}
+ul li{
+    display: inline;
+    padding: 1em;
+}
+ul li a{
+    text-decoration: none;
+    font-size: 18px;
+}
+.bottomBtn{
+    margin-top: 3em;
 }
