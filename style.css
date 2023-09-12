@@ -94,8 +94,10 @@ ul li{
     padding: 1em;
 }
 ul li a{
-    text-decoration: none;
     font-size: 18px;
+}
+a{
+    text-decoration: none;
 }
 .bottomBtn{
     margin-top: 1em;
@@ -136,5 +138,4 @@ letter-spacing: .09em;
 .table table tr td{
     background-color: rgb(2, 54, 150);
     color: rgb(255, 255, 255);
-    
 }
