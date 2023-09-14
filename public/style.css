@@ -1,0 +1,142 @@
+html{
+    height: 100%;
+}
+body{
+    color: white;
+    background: linear-gradient(360deg, rgb(28, 23, 77)15%,rgb(119, 216, 245)90%,rgb(83, 133, 240));
+}
+.box{
+    background:linear-gradient(360deg, rgb(119, 216, 245)15%,rgb(28, 23, 77)90%,rgb(83, 133, 240));
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: .25em;
+    margin:2em;
+    border-radius: .2em;
+}
+.myCanvas{
+    text-align: center;
+}
+canvas{
+    width:"200px";
+    height:"150px";
+    border:1px solid #ffffff;
+    text-align: center;
+    display: block;
+    margin: auto;
+}
+.section{
+    display: flex;
+    text-align: center;
+    padding:auto;
+    margin:auto
+}
+.form{
+    flex: 1;
+    line-height: 3em;
+    text-align: center;
+    float: none;
+}
+.canvas{
+    flex: 1;
+    margin-top: 1.5em;
+    float: none;
+}
+.form,label{
+    font-weight: bold;
+    font-size: 18px;
+    margin: 0 1em;
+    flex: 1;
+    text-align: left;
+}
+.form,input{
+    height: 2em;
+    margin: 0 1em;
+    flex: 1;
+    text-align: left;
+    border-radius: .5em;
+}
+.button{
+    margin-top: .5em;
+    border: .7px solid rgb(0, 32, 92);
+    float: none;
+    letter-spacing: .08em;
+    padding:.5em;
+    color: rgb(255, 255, 255);
+    font-weight:600;
+    font-size: 18px;
+}
+.button:hover{
+    background-color: rgb(255, 255, 255);
+    border: .7px solid rgb(255, 255, 255);
+    font-weight: bold;
+    color: rgb(0, 32, 92);
+}
+.form div{
+    display: flex;
+    margin-left: 10em;
+}
+.form div span{
+    margin: 0 1em;
+    flex: 1;
+    text-align: left;
+}
+img{
+    width:250px;
+    border:1px solid  #ffffff;
+}
+ul {
+    line-height: 2em;
+    list-style-type: none;
+    text-align: center;
+}
+ul li{
+    display: inline;
+    padding: 1em;
+}
+ul li a{
+    font-size: 18px;
+}
+a{
+    text-decoration: none;
+}
+.bottomBtn{
+    margin-top: 1em;
+}
+.attendance{
+    display: flex;
+}
+.search h2{
+text-decoration: underline;
+font-size: 14px;
+letter-spacing: .09em;
+}
+.section1{
+    flex: .5;
+}
+.table{
+    flex: 2;
+    overflow-y:scroll;
+    overflow-x: hidden;
+    height:320px;
+}
+.table table{
+    width: 100%;
+    border-collapse: collapse;
+    position: relative;
+}
+.table table tr th{
+    text-transform: uppercase;
+    background-color: white;
+    color: black;
+    position: sticky;
+    top: 0;
+}
+.table table tr th,td{
+    border: 1px solid rgb(255, 255, 255);
+    
+}
+.table table tr td{
+    background-color: rgb(2, 54, 150);
+    color: rgb(255, 255, 255);
+}
+
