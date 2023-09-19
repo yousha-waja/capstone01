@@ -10,6 +10,7 @@ document.addEventListener('alpine:init', () => {
 			password:'',
 			confirmPassword:'',
 			userType:'',
+			phoneNumber:'',
 			emailValid: true,
 			validateEmail() {
 				const emailPattern = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
@@ -18,18 +19,23 @@ document.addEventListener('alpine:init', () => {
 
 			signup(event){
 				event.preventDefault();
-				if (this.password !== this.confirmPassword || this.userType == '' || !this.emailValid) {
-					alert(`Please ensure:(1) Email address has the correct format.
-                       (2) User type is selected.
-                       (3) Passwords match.`);
-				} else {
+				if (this.password !== this.confirmPassword) {
+					alert(`Please ensure Passwords match.`);
+				} else if(this.userType == ''){
+					alert(`Please ensure 'User type' is selected.`)
+				}
+				else if(!this.emailValid){
+					alert(`Please ensure valid email address is entered.`)
+				}
+				else {
 					axios.post('/api/addUser/', {
 						firstName : this.firstName,
 						surname : this.surname,
 						email : this.email,
 						username : this.username,
 						password : this.password,
-						userType : this.userType
+						userType : this.userType,
+						phoneNumber : this.phoneNumber
 					  }).then((result)=>{
 						if(result.data.error){
 						alert(result.data.error);
@@ -42,6 +48,7 @@ document.addEventListener('alpine:init', () => {
 							this.password = '';
 							this.confirmPassword = '';
 							this.userType = '';
+							this.phoneNumber = '';
 							window.location.href = './index.html';
 						}
 					  })
@@ -55,8 +62,9 @@ document.addEventListener('alpine:init', () => {
 					password : this.password
 				}).then((result)=>{
 					if(result.data.success){
-						alert(result.data.success);
-						// window.location.href = './registers.html';
+						window.location.href = './registers.html';
+						this.username='';
+						this.password='';   	 
 					}else{
 						alert(result.data.error)
 					}

@@ -20,6 +20,7 @@
       <form action="">
         <h2>Sign-up</h2>
         <div class="input-box">
+          <i class="bx bx-user"></i>
           <input
             x-model="firstName"
             type="text"
@@ -28,6 +29,7 @@
           />
         </div>
         <div class="input-box">
+          <i class='bx bxs-user'></i>
           <input x-model="surname" type="text" placeholder="Surname" required />
         </div>
         <div class="input-box">
@@ -41,7 +43,16 @@
           />
         </div>
         <div class="input-box">
-          <i class="bx bx-user"></i>
+          <i class="bx bx-phone"></i> 
+          <input
+            x-model="phoneNumber" 
+            type="tel" 
+            placeholder="Phone Number"
+            required
+          />
+        </div>
+        <div class="input-box">
+          <i class='bx bxs-face'></i>
           <input
             x-model="username"
             type="text"

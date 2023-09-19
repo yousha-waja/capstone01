@@ -4,8 +4,9 @@ CREATE TABLE user (
     firstName TEXT NOT NULL,
     surname TEXT NOT NULL,
     email TEXT NOT NULL UNIQUE,
+    phoneNumber INTEGER UNIQUE,
     username TEXT NOT NULL UNIQUE,
-    password TEXT NOT NULL UNIQUE,
+    password TEXT NOT NULL,
     userType TEXT NOT NULL CHECK (userType IN ('admin', 'attendee'))
 );
 
@@ -30,6 +31,12 @@ CREATE TABLE register (
     registrationId INTEGER PRIMARY KEY AUTOINCREMENT,
     adminId INTEGER NOT NULL,
     attendeeId INTEGER NOT NULL,
+    firstName VARCHAR(255) NOT NULL,
+    surname VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    phonenumber VARCHAR(20) NOT NULL,
+    time TIMESTAMP NOT NULL,
+    date DATE NOT NULL,
     FOREIGN KEY (adminId) REFERENCES admin (adminId),
     FOREIGN KEY (attendeeId) REFERENCES attendee (attendeeId)
 );

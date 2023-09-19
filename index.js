@@ -8,7 +8,7 @@ const  db = await sqlite.open({
     filename:  './attendance.db',
     driver:  sqlite3.Database
 });
-console.log('You are now connected to the database!')
+console.log('You are now connected to the database!');
 await db.migrate(); 
 
 //express initialization
@@ -23,23 +23,24 @@ app.listen(PORT, () => console.log(`Taxi App started on port: ${PORT}`))
 app.post("/api/addUser/", async (req,res)=>{
     const username = await db.get("select * from user where username = ?", req.body.username);
     const email = await db.get("select * from user where email = ?", req.body.email);
-    const password = await db.get("select * from user where password = ?", req.body.password);
+    const phoneNumber = await db.get("select * from user where password = ?", req.body.phoneNumber);
     if (email){
         res.json({
-            error : "Email address already exist!"
-        })
-    }else if(username){
-        res.json({
-            error : "Username already exist!"
+            error : "Email address already exist! Change your email."
         })
     }
-    else if (password){
+    else if(phoneNumber){
         res.json({
-            error : "Password already exist!"
+            error : "Phone number already exist! Change your phone number."
+        })
+    }
+    else if(username){
+        res.json({
+            error : "Username already exist! Change your username."
         })
     }
     else {
-        await db.run("insert into user (firstName,surname,email,username,password,userType) values (?, ?, ?, ?, ?, ?);", [req.body.firstName, req.body.surname, req.body.email, req.body.username, req.body.password, req.body.userType]);
+        await db.run("insert into user (firstName,surname,email,phoneNumber,username,password,userType) values (?, ?, ?,?, ?, ?, ?);", [req.body.firstName, req.body.surname, req.body.email,req.body.phoneNumber, req.body.username, req.body.password, req.body.userType]);
         if(req.body.userType=="admin"){
             const userId = await db.get("select id from user where username=?", req.body.username);
             await db.run("insert into admin (userId, username) values (?, ?);", [userId.id, req.body.username]);

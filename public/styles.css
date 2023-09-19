@@ -15,7 +15,7 @@
     align-items: flex-end;
     min-height: 100vh;
     background: url('./images/logo.png') no-repeat center top / 79vh auto, 
-                linear-gradient(to bottom, black 66%, rgb(0, 153, 254) 100%);
+                linear-gradient(to bottom, black 76%, rgb(0, 153, 254) 100%);
     font-size: 3vh;
     color: rgb(0, 153, 254);
 }
@@ -24,7 +24,7 @@
     /* Adjust background size for smaller screens */
     .login {
         background: url('./images/logo.png') no-repeat center top / 40vh auto, 
-        linear-gradient(to bottom, black 51%, rgb(0, 153, 254) 100%);
+        linear-gradient(to bottom, black 66%, rgb(0, 153, 254) 100%);
     }
 }
 
