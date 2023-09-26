@@ -88,7 +88,7 @@
         <!-- <div class="remember">
           <label><input type="checkbox" x-model="rememberMe"/>Remember me</label>
         </div> -->
-        <button type="submit" class="btn" @click="signup(event)">Submit</button>
+        <button type="submit" class="btn" @click="signup(event)" :disabled="!allFieldsFilled()">Submit</button>
       </form>
     </div>
   </body>

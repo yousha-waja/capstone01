@@ -72,6 +72,9 @@ document.addEventListener('alpine:init', () => {
 				else if(!this.emailValid){
 					alert(`Please ensure valid email address is entered.`)
 				}
+				else if(!this.username){
+					alert(`Please enter a username.`)
+				}
 				else {
 					axios.post('/api/addUser/', {
 						firstName : this.firstName,
@@ -99,6 +102,7 @@ document.addEventListener('alpine:init', () => {
 					  })
 				}
 			},
+			//SignUp Button functionaliy
             
 
 			//Login
@@ -244,10 +248,8 @@ document.addEventListener('alpine:init', () => {
 				  .then((result) => {
 					if (result.data.success) {
 					  alert(result.data.message);
-			  
-					  // Call the viewRegister API here
 					  axios.post("/api/viewRegister/", {
-						registerId: this.attendanceList[0].registerId,
+					  registerId: this.attendanceList[0].registerId,
 					  })
 					  .then((viewResult) => {
 						if (viewResult.data.success) {
@@ -263,7 +265,9 @@ document.addEventListener('alpine:init', () => {
 					  
 					} else {
 					  alert(result.data.error);
-					}
+					};
+					this.manualAttendanceCheckInTime ='';
+				    this.manualAttendanceUsername ='';
 				  })
 				  .catch((error) => {
 					// Handle the error here, e.g., show a user-friendly error message.
