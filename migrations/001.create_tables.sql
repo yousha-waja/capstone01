@@ -10,34 +10,43 @@ CREATE TABLE user (
     userType TEXT NOT NULL CHECK (userType IN ('admin', 'attendee'))
 );
 
--- Create the admin table linked to the user table
-CREATE TABLE admin (
-    adminId INTEGER PRIMARY KEY AUTOINCREMENT,
-    userId INTEGER NOT NULL,
-    username TEXT NOT NULL UNIQUE,
-    FOREIGN KEY (userId) REFERENCES user (id)
-);
-
 -- Create the attendee table linked to the user table
 CREATE TABLE attendee (
     attendeeId INTEGER PRIMARY KEY AUTOINCREMENT,
-    userId INTEGER NOT NULL,
+    userId INTEGER NOT NULL UNIQUE,
     username TEXT NOT NULL UNIQUE,
     FOREIGN KEY (userId) REFERENCES user (id)
 );
 
--- Create the registration table linked to admin and attendee
+-- Create the register table
+-- Allows admin to create a register an assign attendees to it.
 CREATE TABLE register (
-    registrationId INTEGER PRIMARY KEY AUTOINCREMENT,
-    adminId INTEGER NOT NULL,
-    attendeeId INTEGER NOT NULL,
-    firstName VARCHAR(255) NOT NULL,
-    surname VARCHAR(255) NOT NULL,
-    email VARCHAR(255) NOT NULL,
-    phonenumber VARCHAR(20) NOT NULL,
-    time TIMESTAMP NOT NULL,
-    date DATE NOT NULL,
-    FOREIGN KEY (adminId) REFERENCES admin (adminId),
-    FOREIGN KEY (attendeeId) REFERENCES attendee (attendeeId)
+    registerId INTEGER NOT NULL,
+    registerName VARCHAR(255) NOT NULL,
+    attendee INTEGER NOT NULL,
+    adminName INTEGER NOT NULL,
+    FOREIGN KEY (adminName) REFERENCES admin (username)
+    FOREIGN KEY (attendee) REFERENCES attendee (username)
 );
 
+
+
+-- Create the admin table linked to the user table
+CREATE TABLE admin (
+    adminId INTEGER PRIMARY KEY AUTOINCREMENT,
+    userId INTEGER NOT NULL UNIQUE,
+    username TEXT NOT NULL UNIQUE,
+    FOREIGN KEY (userId) REFERENCES user (id)
+);
+
+-- Create the attendance table
+CREATE TABLE attendance (
+    attendanceId INTEGER PRIMARY KEY AUTOINCREMENT,
+    registerId INTEGER NOT NULL,
+    username TEXT NOT NULL,
+    attendeeId INTEGER NOT NULL,
+    checkInTime TIMESTAMP NOT NULL,
+    FOREIGN KEY (registerId) REFERENCES register (registerId),
+    FOREIGN KEY (attendeeId) REFERENCES attendee (attendeeId),
+    FOREIGN KEY (username) REFERENCES attendee (username)
+);
